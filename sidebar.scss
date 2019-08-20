@@ -1,0 +1,258 @@
+body{
+    margin:0;
+    padding-left: 230px;
+    font-family: 'Roboto', sans-serif;
+    .sidebar{
+        background-color: #2A3F54;
+        height: 100%;
+        width: 230px;
+        left: 0;
+        top: 0;
+        position: fixed;
+        display: none;
+        .top_title{
+            a{
+                text-decoration: none;
+                font-size: 22px;
+                line-height: 59px;
+                padding-left: 10px;
+                color: #ECF0F1;
+                i{
+                    border: solid 1px;
+                    padding: 5px 6px;
+                    border-radius: 100%;
+                }
+                // span{}
+            }
+        }
+        .profile{
+            display: flex;
+            .profile_image{
+                width: 35%;
+                float: left;
+                img{
+                    width: 70%;
+                    margin-left: 15%;
+                    margin-top: 20px;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    padding: 4px;
+                    background-color: white;
+                }
+            }
+            .profile_info{
+                padding: 25px 10px 10px;
+                width: 65%;
+                span{
+                    font-size: 13px;
+                    line-height: 30px;
+                    color: #BAB8B8;
+                }
+                h2{
+                    font-size: 14px;
+                    margin:0;
+                    color: white;
+                    font-weight: 100;
+                }
+            }
+        }
+        .sidebar_menu{
+            margin-top: 15px;
+            .menu_section{
+                margin-bottom: 35px;
+                h3{
+                    padding-left: 15px;
+                    color: white;
+                    letter-spacing: 0.5px;
+                    font-weight: 500;
+                    font-size: 11px;
+                    margin: 0;
+                }
+                ul{
+                    padding: 0;
+                    list-style-type: none;
+                    .openChild{
+                        cursor: pointer;
+                        a{
+                            display: block;
+                            color: #E7E7E7;
+                            font-size: 13px;
+                            padding: 13px 15px 12px;
+                            margin-bottom: 6px;
+                            text-shadow: rgba(0,0,0,.25) 0 -1px 0;
+                            &.active{
+                                background: linear-gradient(#334556,#2C4257),#2A3F54;
+                                box-shadow: rgba(0,0,0,.25) 0 1px 0, inset rgba(255,255,255,.16) 0 1px 0;
+                            }
+                            &:hover{
+                                color: white;
+                                background: linear-gradient(#334556,#2C4257),#2A3F54;
+                                box-shadow: rgba(0,0,0,.25) 0 1px 0, inset rgba(255,255,255,.16) 0 1px 0;
+                            }
+                            i{
+                                width: 26px;
+                                font-size: 18px;
+                            }
+                            span{
+                                float: right;
+                            }
+                        }
+                        .child_menu{
+                            display: none;
+                            overflow: hidden;
+                            
+                            li{
+                                padding-left: 36px;
+                                &:hover{
+                                    background-color:rgba(255,255,255,.06);
+                                }
+                                a{
+                                    box-shadow:unset;
+                                    background:none;
+                                }
+                            }
+                            &.active{
+                                display: block;
+                            }
+                        }
+                    }
+                }                
+            }
+
+        }
+        .side_footer{
+            width: 230px;
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            background-color: #172D44;
+            .tooltip{
+                width: 25%;
+                text-align: center;
+                font-size: 18px;
+                padding: 7px 0 5px;
+                color: #5A738E;
+                display: block;
+                position: relative;
+                &:hover{
+                    background-color: #425567;
+                    color: #23527c;
+                    .tooltiptext{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                .tooltiptext{
+                    visibility: hidden;
+                    width: 80px;
+                    background-color: black;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -35px;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    font-size: 13px;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        margin-left: -5px;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-color: black transparent transparent transparent;
+                    }
+                }
+            }
+        }
+        &.active{
+            display: block;
+        }
+    }
+    .simple_sidebar{
+        background-color: #2A3F54;
+        width: 70px;
+        min-height: 100%;
+        position: absolute;
+        display: none;
+        .top_title{
+            a{
+                padding-left: 10px;
+                i{
+                    font-size: 27px;
+                    border: solid 1px white;
+                    border-radius: 50%;
+                    padding: 5px 6px;
+                    margin: 13px 0 0 3px;
+                    color: white;
+                }
+            }
+        }
+        .sidebar_menu{
+            .menu_section{
+                margin-top: 50px;
+                ul{
+                    list-style-type: none;
+                    padding: 0;
+                    .openChild{
+                        position: relative;
+                        display: flex;
+                        a{
+                            font-size: 10px;
+                            padding: 10px 5px;
+                            margin-bottom: 6px;
+                            display: block;
+                            text-align: center;
+                            color: #E7E7E7;
+                            cursor: pointer;
+                            &:hover{
+                                color: white;
+                            }
+                            i{
+                                font-size: 25px;
+                                width: 100%;
+                                margin-bottom: 5px;
+                            }
+                        }
+                        ul{
+                            position: absolute;
+                            left: 100%;
+                            background-color: #2A3F54;
+                            width: 200px;
+                            display: none;
+                            li{
+                                padding: 0 10px;
+                                display: flex;
+                                justify-content: flex-start;
+                                &:hover{
+                                    background-color: rgba(255,255,255,.06); 
+                                }
+                            }
+                            &.active{
+                                display: block;
+                                transition: 1s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.active{
+            display: block;
+        }
+    }
+    .toggle{
+        position: relative;
+        left: 22%;
+        font-size: 25px;
+    }
+    .rightSide{
+        // border: solid 1px;
+    }
+}
